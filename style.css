@@ -1,0 +1,248 @@
+/* --- 1. GENEL AYARLAR & FONTLAR --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fcfcfc;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .nav-links a, .btn-primary {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+ul { list-style: none; }
+
+/* --- 2. NAVBAR (MENÜ) --- */
+.navbar {
+    background: #fff;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 90px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo img { height: 70px; width: auto; }
+
+.nav-links { display: flex; gap: 30px; align-items: center; }
+
+.nav-links a {
+    font-weight: 600;
+    font-size: 15px;
+    color: #444;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.nav-links a:hover, .nav-links a.active { color: #003366; }
+
+.btn-contact {
+    background: #003366;
+    color: #fff !important;
+    padding: 12px 30px;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0,51,102,0.3);
+}
+
+.btn-contact:hover { background: #002244; transform: translateY(-2px); }
+
+.hamburger { display: none; font-size: 1.8rem; color: #003366; cursor: pointer; }
+
+/* --- 3. HERO SECTION --- */
+.hero {
+    position: relative;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-content { position: relative; z-index: 2; max-width: 800px; padding: 0 20px; }
+
+.hero h1 {
+    font-size: 3.5rem; margin-bottom: 20px; font-weight: 800;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+}
+
+.hero p { font-size: 1.4rem; margin-bottom: 40px; font-weight: 400; opacity: 0.9; }
+
+/* --- GÜNCELLEME 1: BUTON KIRMIZI OLDU --- */
+.btn-primary {
+    background: #e60000; /* Canlı Kırmızı */
+    color: #fff;
+    padding: 15px 45px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 5px 15px rgba(230, 0, 0, 0.4); /* Kırmızı Gölge */
+}
+
+.btn-primary:hover { background: #b30000; transform: translateY(-3px); }
+
+/* --- 4. İSTATİSTİK BANDI --- */
+.stats-section {
+    background: #003366;
+    padding: 60px 0;
+    color: #fff;
+    position: relative;
+    z-index: 5;
+    margin-top: -5px;
+}
+
+.stats-grid { display: flex; justify-content: space-around; text-align: center; }
+
+/* --- GÜNCELLEME 2: SAYILAR BEYAZ OLDU --- */
+.stat-item .number { 
+    display: block; 
+    font-size: 3rem; 
+    font-weight: 800; 
+    color: #ffffff; /* Beyaz Renk */
+    margin-bottom: 5px; 
+}
+
+.stat-item .text { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; opacity: 0.9; }
+
+/* --- 5. DEĞERLER --- */
+.values {
+    display: flex; justify-content: center; gap: 30px;
+    padding: 80px 20px; flex-wrap: wrap;
+}
+
+.value-card {
+    background: #fff; padding: 40px 30px; border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); flex: 1; min-width: 280px;
+    text-align: center; transition: transform 0.3s; border-bottom: 4px solid transparent;
+}
+
+/* Diğerleri Kalsın dediğin için burası Altın Sarısı kaldı */
+.value-card:hover { transform: translateY(-10px); border-bottom: 4px solid #d4af37; }
+.value-card i { font-size: 3.5rem; color: #003366; margin-bottom: 20px; }
+.value-card h3 { font-size: 1.5rem; margin-bottom: 15px; color: #333; }
+
+/* --- 6. ÜRÜNLER SAYFASI --- */
+.products-section { padding: 60px 20px; background-color: #fff; }
+
+.page-header {
+    margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 20px;
+}
+.breadcrumb { font-size: 0.85rem; color: #999; font-weight: 700; letter-spacing: 1px; }
+.page-title { font-size: 2.5rem; color: #003366; font-weight: 800; margin-top: 10px; }
+
+.content-wrapper { display: flex; gap: 40px; align-items: flex-start; }
+.sidebar { flex: 0 0 260px; }
+
+.category-box {
+    border: 1px solid #eee; border-radius: 12px; padding: 25px;
+    background: #fff; box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+}
+.category-box h3 { color: #003366; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 2px solid #f4f4f4; }
+.category-box ul li { margin-bottom: 12px; }
+.category-box ul li a { display: flex; justify-content: space-between; color: #666; font-weight: 600; cursor: pointer; }
+.category-box ul li a:hover { color: #d4af37; } /* Bu da sarı kaldı */
+
+.product-grid { flex: 1; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 30px; }
+
+.product-card {
+    background: #fff; border-radius: 15px; overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; text-align: center; padding-bottom: 20px;
+}
+.product-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+
+.img-holder { width: 100%; height: 220px; overflow: hidden; }
+.img-holder img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+.product-card:hover .img-holder img { transform: scale(1.1); }
+
+.product-card h3 { margin: 15px 0 5px; color: #003366; font-size: 1.2rem; }
+.stars { color: #00ddeb; font-size: 0.9rem; }
+
+/* --- 7. HAKKIMIZDA --- */
+.about { display: flex; align-items: center; padding: 100px 20px; gap: 60px; }
+.about-text { flex: 1; }
+.about-text h2 { font-size: 2.5rem; color: #003366; margin-bottom: 25px; }
+.about-text p { margin-bottom: 20px; font-size: 1.05rem; color: #555; }
+.about-img { flex: 1; }
+.about-img img { width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+
+.mission { background: #f9f9f9; text-align: center; padding: 80px 20px; }
+.mission h2 { color: #003366; margin-bottom: 20px; }
+.mission p { max-width: 800px; margin: 0 auto; font-size: 1.2rem; color: #555; }
+
+/* --- 8. İLETİŞİM & FOOTER --- */
+.contact-section { padding: 80px 0; background: #fff; }
+.section-title { text-align: center; color: #003366; font-size: 2.5rem; margin-bottom: 60px; }
+
+.contact-wrapper { display: flex; gap: 50px; }
+.contact-info { flex: 1; display: flex; flex-direction: column; gap: 30px; }
+
+.info-item { display: flex; gap: 20px; align-items: flex-start; }
+.info-item i {
+    width: 60px; height: 60px; background: #f0f4f8; color: #003366;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; transition: 0.3s;
+}
+.info-item:hover i { background: #003366; color: #fff; }
+.info-item h4 { font-size: 1.2rem; margin-bottom: 5px; color: #333; }
+
+.map-container { flex: 1; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+
+/* Footer çizgisi de sarı kaldı */
+footer { background: #003366; color: #fff; padding: 40px 0; text-align: center; border-top: 5px solid #d4af37; }
+.footer-content p { opacity: 0.8; font-size: 0.9rem; }
+.social-links a { color: #fff; font-size: 1.5rem; margin: 0 10px; }
+.social-links { margin-top: 15px; }
+
+/* --- 9. SABİT WHATSAPP --- */
+.float-whatsapp {
+    position: fixed; width: 65px; height: 65px; bottom: 30px; right: 30px;
+    background-color: #25d366; color: #FFF; border-radius: 50px;
+    text-align: center; font-size: 35px; box-shadow: 2px 2px 15px rgba(0,0,0,0.3);
+    z-index: 9999; display: flex; align-items: center; justify-content: center;
+}
+.float-whatsapp:hover { background-color: #1ebe57; transform: scale(1.1); }
+
+/* --- 10. MOBİL --- */
+@media (max-width: 768px) {
+    .navbar { height: 80px; }
+    .hamburger { display: block; }
+    
+    .nav-links {
+        position: absolute; top: 80px; right: 0; width: 100%;
+        background: #fff; flex-direction: column; padding: 30px 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1); display: none;
+    }
+    .nav-links.active { display: flex; }
+    
+    .hero h1 { font-size: 2.2rem; }
+    .hero p { font-size: 1.1rem; }
+    .stats-grid { flex-direction: column; gap: 30px; }
+    .content-wrapper, .about, .contact-wrapper { flex-direction: column; }
+    .sidebar { width: 100%; }
+}
+.show { display: block; } 
+.hide { display: none; }

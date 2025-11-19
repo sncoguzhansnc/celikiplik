@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Çelik İplik | Ana Sayfa</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="https://static.wixstatic.com/media/33c4b0_0d2a38f4ea92488b9bfedb57b8591487~mv2.png/v1/fill/w_107,h_107,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/33c4b0_0d2a38f4ea92488b9bfedb57b8591487~mv2.png" alt="Çelik İplik Logo"></a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Ana Sayfa</a></li>
+                    <li><a href="urunler.html">Ürünlerimiz</a></li>
+                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                    <li><a href="#contact" class="btn-contact">İletişim</a></li>
+                </ul>
+                <div class="hamburger"><i class="fas fa-bars"></i></div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" style="background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.6)), url('resimler/anasayfa-hero.jpg') no-repeat center center/cover;">
+        <div class="hero-content" data-aos="fade-down">
+            <h1>Çelik İplik Güvencesiyle</h1>
+            <p>Kalite, Güvence ve Tecrübe ile tekstil sektöründe yanınızdayız.</p>
+            <a href="urunler.html" class="btn-primary">Ürünleri İncele</a>
+        </div>
+    </section>
+
+    <section class="stats-section" data-aos="fade-up">
+        <div class="container stats-grid">
+            <div class="stat-item">
+                <span class="number">25+</span>
+                <span class="text">Yıllık Tecrübe</span>
+            </div>
+            <div class="stat-item">
+                <span class="number">500+</span>
+                <span class="text">Mutlu Müşteri</span>
+            </div>
+            <div class="stat-item">
+                <span class="number">1000+</span>
+                <span class="text">Ton Üretim</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="values container">
+        <div class="value-card" data-aos="fade-up" data-aos-delay="100">
+            <i class="fas fa-gem"></i>
+            <h3>Kalite</h3>
+            <p>En üst standartlarda iplik tedariği.</p>
+        </div>
+        <div class="value-card" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Güvence</h3>
+            <p>Teslimatta ve üretimde sözümüzün arkasındayız.</p>
+        </div>
+        <div class="value-card" data-aos="fade-up" data-aos-delay="300">
+            <i class="fas fa-history"></i>
+            <h3>Tecrübe</h3>
+            <p>Yılların getirdiği sektör deneyimi.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-in">İletişim Bilgileri</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div><h4>Adres</h4><p>Orta Mah. Çevreyolu Cad. No:45<br>Bayrampaşa / İstanbul</p></div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div><h4>Telefon</h4><p><a href="tel:+905398377886">+90 539 837 78 86</a></p></div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div><h4>E-posta</h4><p><a href="mailto:info@celikiplik.com">info@celikiplik.com</a></p></div>
+                    </div>
+                </div>
+                <div class="map-container" data-aos="fade-left">
+                    <iframe src="https://maps.google.com/maps?q=Orta%20Mah.%20%C3%87evreyolu%20Cad.%20No:45%20Bayrampa%C5%9Fa&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>© 2025 Çelik İplik. Tüm hakları saklıdır.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/celik.iplik" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.link/tsg7dq" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.link/tsg7dq" class="float-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+        hamburger.addEventListener("click", () => { navLinks.classList.toggle("active"); });
+    </script>
+
+</body>
+</html>

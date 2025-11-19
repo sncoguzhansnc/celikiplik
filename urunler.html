@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Çelik İplik | Ürünler</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="https://static.wixstatic.com/media/33c4b0_0d2a38f4ea92488b9bfedb57b8591487~mv2.png/v1/fill/w_107,h_107,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/33c4b0_0d2a38f4ea92488b9bfedb57b8591487~mv2.png" alt="Çelik İplik Logo"></a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="urunler.html" class="active">Ürünlerimiz</a></li>
+                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                    <li><a href="#contact" class="btn-contact">İletişim</a></li>
+                </ul>
+                <div class="hamburger"><i class="fas fa-bars"></i></div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="products" class="products-section container">
+        <div class="page-header" data-aos="fade-right">
+            <span class="breadcrumb"><a href="index.html">ANASAYFA</a> / ÜRÜNLER</span>
+            <h2 class="page-title">Ürünler</h2>
+        </div>
+
+        <div class="content-wrapper">
+            <aside class="sidebar" data-aos="fade-right">
+                <div class="category-box">
+                    <h3>Ürün Kategorileri</h3>
+                    <ul>
+                        <li><a onclick="filterSelection('all')">Tümü <i class="fas fa-th"></i></a></li>
+                        <li><a onclick="filterSelection('iplik')">İplik <i class="fas fa-angle-double-right"></i></a></li>
+                        <li><a onclick="filterSelection('boya')">Boya <i class="fas fa-angle-double-right"></i></a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <div class="product-grid">
+                <div class="product-card column iplik" data-aos="fade-up">
+                    <div class="img-holder"><img src="resimler/pamuk.jpg" alt="Pamuk" onerror="this.src='https://via.placeholder.com/300'"></div>
+                    <h3>Pamuk İpliği</h3>
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                </div>
+                <div class="product-card column iplik" data-aos="fade-up" data-aos-delay="100">
+                    <div class="img-holder"><img src="resimler/fantazi.jpg" alt="Fantazi" onerror="this.src='https://via.placeholder.com/300'"></div>
+                    <h3>Fantazi İplik</h3>
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                </div>
+                <div class="product-card column iplik" data-aos="fade-up" data-aos-delay="200">
+                    <div class="img-holder"><img src="resimler/kamgarn.jpg" alt="Kamgarn" onerror="this.src='https://via.placeholder.com/300'"></div>
+                    <h3>Kamgarn</h3>
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                </div>
+                <div class="product-card column boya" data-aos="fade-up">
+                    <div class="img-holder"><img src="resimler/bobin.jpg" alt="Bobin" onerror="this.src='https://via.placeholder.com/300'"></div>
+                    <h3>Bobin</h3>
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                </div>
+                <div class="product-card column boya" data-aos="fade-up" data-aos-delay="100">
+                    <div class="img-holder"><img src="resimler/cile.jpg" alt="Çile" onerror="this.src='https://via.placeholder.com/300'"></div>
+                    <h3>Çile Boyama</h3>
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                </div>
+                <div class="product-card column boya" data-aos="fade-up" data-aos-delay="200">
+                    <div class="img-holder"><img src="resimler/towtops.jpg" alt="TowTops" onerror="this.src='https://via.placeholder.com/300'"></div>
+                    <h3>Tow-Tops Boyama</h3>
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-in">İletişim Bilgileri</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div><h4>Adres</h4><p>Orta Mah. Çevreyolu Cad. No:45<br>Bayrampaşa / İstanbul</p></div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div><h4>Telefon</h4><p><a href="tel:+905398377886">+90 539 837 78 86</a></p></div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div><h4>E-posta</h4><p><a href="mailto:info@celikiplik.com">info@celikiplik.com</a></p></div>
+                    </div>
+                </div>
+                <div class="map-container" data-aos="fade-left">
+                    <iframe src="https://maps.google.com/maps?q=Orta%20Mah.%20%C3%87evreyolu%20Cad.%20No:45%20Bayrampa%C5%9Fa&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>© 2025 Çelik İplik. Tüm hakları saklıdır.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/celik.iplik" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.link/tsg7dq" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.link/tsg7dq" class="float-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        // Hamburger
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+        hamburger.addEventListener("click", () => { navLinks.classList.toggle("active"); });
+
+        // Filtreleme
+        filterSelection("all")
+        function filterSelection(c) {
+          var x, i; x = document.getElementsByClassName("column");
+          if (c == "all") c = "";
+          for (i = 0; i < x.length; i++) {
+            w3RemoveClass(x[i], "show");
+            if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+            else x[i].style.display = "none";
+          }
+          for (i = 0; i < x.length; i++) {
+             if (x[i].className.indexOf(c) > -1) x[i].style.display = "block";
+          }
+        }
+        function w3AddClass(element, name) {
+          var i, arr1, arr2; arr1 = element.className.split(" "); arr2 = name.split(" ");
+          for (i = 0; i < arr2.length; i++) { if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];} }
+        }
+        function w3RemoveClass(element, name) {
+          var i, arr1, arr2; arr1 = element.className.split(" "); arr2 = name.split(" ");
+          for (i = 0; i < arr2.length; i++) { while (arr1.indexOf(arr2[i]) > -1) { arr1.splice(arr1.indexOf(arr2[i]), 1); } }
+          element.className = arr1.join(" ");
+        }
+    </script>
+
+</body>
+</html>

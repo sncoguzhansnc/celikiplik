@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Çelik İplik | Hakkımızda</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="https://static.wixstatic.com/media/33c4b0_0d2a38f4ea92488b9bfedb57b8591487~mv2.png/v1/fill/w_107,h_107,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/33c4b0_0d2a38f4ea92488b9bfedb57b8591487~mv2.png" alt="Çelik İplik Logo"></a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="urunler.html">Ürünlerimiz</a></li>
+                    <li><a href="hakkimizda.html" class="active">Hakkımızda</a></li>
+                    <li><a href="#contact" class="btn-contact">İletişim</a></li>
+                </ul>
+                <div class="hamburger"><i class="fas fa-bars"></i></div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="about" class="about container">
+        <div class="about-text" data-aos="fade-right">
+            <h2>Hakkımızda</h2>
+            <p>
+                Biz, tekstil sektöründe kaliteli ipliği doğru fiyatla buluşturmayı hedefleyen bir toptan iplik tedarik firmasıyız. 
+                Uzun yıllardır edindiğimiz tecrübe ve güçlü üretim ağımız sayesinde müşterilerimize hem yerli fabrikalarda 
+                özel üretim yaptırma hem de hazır stoktan hızlı teslimat avantajı sunuyoruz.
+            </p>
+            <p>
+                Triko, çorap, bere, atkı, dar dokuma ve birçok tekstil alanında kullanılan iplik çeşitlerimiz arasında 
+                pamuk, viskon, bambu, akrilik karışımları ve özel efekt iplikler bulunmaktadır.
+            </p>
+        </div>
+        <div class="about-img" data-aos="fade-left">
+            <img src="resimler/hakkimizda-banner.jpg" alt="Hakkımızda Görseli" onerror="this.src='https://via.placeholder.com/500x400?text=Resim+Yok'">
+        </div>
+    </section>
+
+    <section class="mission" data-aos="fade-up">
+        <div class="container">
+            <h2>Misyonumuz</h2>
+            <p>Misyonumuz, tekstil üreticilerinin güvenle çalışabileceği uzun soluklu bir iş ortağı olmaktır. Kalite, güven ve hızlı hizmet — bizim için sadece söz değil, her teslimatta verdiğimiz bir garantidir.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-in">İletişim Bilgileri</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div><h4>Adres</h4><p>Orta Mah. Çevreyolu Cad. No:45<br>Bayrampaşa / İstanbul</p></div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div><h4>Telefon</h4><p><a href="tel:+905398377886">+90 539 837 78 86</a></p></div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div><h4>E-posta</h4><p><a href="mailto:info@celikiplik.com">info@celikiplik.com</a></p></div>
+                    </div>
+                </div>
+                <div class="map-container" data-aos="fade-left">
+                    <iframe src="https://maps.google.com/maps?q=Orta%20Mah.%20%C3%87evreyolu%20Cad.%20No:45%20Bayrampa%C5%9Fa&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>© 2025 Çelik İplik. Tüm hakları saklıdır.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/celik.iplik" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.link/tsg7dq" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.link/tsg7dq" class="float-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+        hamburger.addEventListener("click", () => { navLinks.classList.toggle("active"); });
+    </script>
+
+</body>
+</html>
