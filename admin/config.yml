@@ -7,35 +7,34 @@ media_folder: "images"
 public_folder: "images"
 
 collections:
-  - name: "genel_ayarlar"
-    label: "Genel Site Ayarları"
-    folder: "data/ayarlar" 
-    create: true
-    format: "json"
-    fields:
-      - {label: "Site Ana Başlığı", name: "title", widget: "string"}
-      - {label: "Ana Sayfa Karşılama Sloganı", name: "slogan", widget: "string", required: false}
-      - {label: "Hakkımızda Metni", name: "about_text", widget: "text"}
-      - {label: "Ana Kapak Resmi", name: "ana_resim", widget: "image", required: false}
-      
-  - name: "iletisim"
-    label: "İletişim Bilgileri"
-    folder: "data/iletisim"
-    create: true
-    format: "json"
-    fields:
-      - {label: "Telefon Numarası", name: "telefon", widget: "string", required: false}
-      - {label: "E-posta Adresi", name: "email", widget: "string", required: false}
-      - {label: "Adres (Açık Adres)", name: "adres", widget: "text", required: false}
-      - {label: "Çalışma Saatleri", name: "saatler", widget: "string", required: false}
+  - name: "ayarlar"
+    label: "Site Ayarları ve İletişim"
+    files:
+      - label: "Ana Sayfa Yazıları"
+        name: "genel"
+        file: "data/ayarlar.json"
+        fields:
+          - {label: "Site Ana Başlığı", name: "title", widget: "string"}
+          - {label: "Ana Sayfa Karşılama Sloganı", name: "slogan", widget: "string"}
+          - {label: "Hakkımızda Metni", name: "about_text", widget: "text"}
+      - label: "İletişim Bilgileri"
+        name: "iletisim"
+        file: "data/iletisim.json"
+        fields:
+          - {label: "Telefon Numarası", name: "telefon", widget: "string"}
+          - {label: "E-posta Adresi", name: "email", widget: "string"}
+          - {label: "Adres", name: "adres", widget: "text"}
 
-  - name: "urunler"
-    label: "İplik Çeşitleri / Ürünler"
-    folder: "data/urunler"
-    create: true
-    format: "json"
-    fields:
-      - {label: "Ürün Adı", name: "urun_adi", widget: "string"}
-      - {label: "Ürün Görseli", name: "urun_resmi", widget: "image", required: false}
-      - {label: "Kısa Açıklama (Renk, kalınlık vb.)", name: "aciklama", widget: "text"}
-      - {label: "Stok Durumu", name: "stok", widget: "boolean", default: true}
+  - name: "urunler_koleksiyonu"
+    label: "İplik Çeşitleri (Ürünler)"
+    files:
+      - label: "Tüm Ürünler Listesi"
+        name: "urunler"
+        file: "data/urunler.json"
+        fields:
+          - label: "Ürün Ekle"
+            name: "urun_listesi"
+            widget: "list"
+            fields:
+              - {label: "Ürün Adı", name: "urun_adi", widget: "string"}
+              - {label: "Kısa Açıklama", name: "aciklama", widget: "text"}
