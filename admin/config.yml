@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: sncoguzhansnc/celik-iplik
+  repo: sncoguzhansnc/celikiplik
   branch: main
 
 media_folder: "images"
