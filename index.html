@@ -30,7 +30,7 @@
 
     <section class="hero" style="background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.6)), url('resimler/anasayfa-hero.jpg') no-repeat center center/cover;">
         <div class="hero-content" data-aos="fade-down">
-            <!-- JS'nin bulabilmesi için id="site-basligi" ve id="site-slogani" eklendi -->
+            <!-- JS'nin bulabilmesi için id -->
             <h1 id="site-basligi">Çelik İplik Güvencesiyle</h1>
             <p id="site-slogani">Kalite, Güvence ve Tecrübe ile tekstil sektöründe yanınızdayız.</p>
             <a href="urunler.html" class="btn-primary">Ürünleri İncele</a>
@@ -87,17 +87,14 @@
                 <div class="contact-info" data-aos="fade-right">
                     <div class="info-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <!-- Adres için id eklendi -->
                         <div><h4>Adres</h4><p id="iletisim-adres">Orta Mah. Çevreyolu Cad. No:45<br>Bayrampaşa / İstanbul</p></div>
                     </div>
                     <div class="info-item">
                         <i class="fas fa-phone-alt"></i>
-                        <!-- Telefon için id eklendi -->
                         <div><h4>Telefon</h4><p><a href="tel:+905398377886" id="iletisim-telefon">+90 539 837 78 86</a></p></div>
                     </div>
                     <div class="info-item">
                         <i class="fas fa-envelope"></i>
-                        <!-- Email için id eklendi -->
                         <div><h4>E-posta</h4><p><a href="mailto:info@celikiplik.com" id="iletisim-email">info@celikiplik.com</a></p></div>
                     </div>
                 </div>
@@ -132,7 +129,6 @@
 
     <!-- CMS'den Gelen Verileri Çekme Kodu -->
     <script>
-        // 1. ANA SAYFA BAŞLIK VE SLOGAN ÇEKME (Önceki Ayar)
         fetch('data/ayarlar/deneme.json', { cache: 'no-store' })
             .then(response => response.json())
             .then(veri => {
@@ -145,11 +141,9 @@
         fetch('data/iletisim.json', { cache: 'no-store' })
             .then(response => response.json())
             .then(veri => {
-                // \n ile ayrılmış metni HTML <br> etiketine çeviriyoruz (Adres alt satıra geçsin diye)
                 if(veri.adres) document.getElementById('iletisim-adres').innerHTML = veri.adres.replace(/\n/g, '<br>');
                 if(veri.telefon) {
                     document.getElementById('iletisim-telefon').innerText = veri.telefon;
-                    // Tıklayınca aranması için boşlukları temizleyip href'e ekliyoruz
                     document.getElementById('iletisim-telefon').href = "tel:" + veri.telefon.replace(/\s+/g, ''); 
                 }
                 if(veri.email) {
@@ -159,18 +153,16 @@
             })
             .catch(hata => console.log('İletişim verisi henüz oluşturulmamış veya çekilemedi:', hata));
 
-        // 3. ÜRÜNLERİ DÖNGÜ (LOOP) İLE ÇEKME
+        // 3. ÜRÜNLERİ LOOP İLE ÇEKME
         fetch('data/urunler.json', { cache: 'no-store' })
             .then(response => response.json())
             .then(veri => {
                 const container = document.getElementById('urun-listesi-container');
                 if(veri.urun_listesi && veri.urun_listesi.length > 0) {
-                    container.innerHTML = ''; // İçindeki mevcut boşluğu/yükleniyor yazısını temizle
+                    container.innerHTML = ''; 
                     
                     veri.urun_listesi.forEach(urun => {
-                        // Her ürün için bir HTML kartı (div) oluşturuyoruz
                         const kart = document.createElement('div');
-                        // Karta CSS özellikleri ekliyoruz (style.css'ine de taşıyabilirsin)
                         kart.style.cssText = "background: #fff; border: 1px solid #ddd; padding: 20px; border-radius: 8px; width: 280px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);";
                         
                         let urunHtml = `<h3 style="color: #003366; margin-bottom: 10px;">${urun.urun_adi}</h3>`;
