@@ -119,8 +119,10 @@
         hamburger.addEventListener("click", () => { navLinks.classList.toggle("active"); });
     </script>
 
+    <!-- CMS'den Gelen Verileri Çekme Kodu (Önbellek Kırıcı Eklenmiş Hali) -->
     <script>
-        fetch('data/ayarlar/deneme.json')
+        // { cache: 'no-store' } kodu, tarayıcıya "bu dosyayı asla hafızada tutma, hep en yenisini getir" der.
+        fetch('data/ayarlar/deneme.json', { cache: 'no-store' })
             .then(response => response.json())
             .then(veri => {
                 if(veri.title) {
