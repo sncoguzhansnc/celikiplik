@@ -7,11 +7,35 @@ media_folder: "images"
 public_folder: "images"
 
 collections:
-  - name: "site_icerik"
-    label: "Site Yazıları"
-    folder: "data"
+  - name: "genel_ayarlar"
+    label: "Genel Site Ayarları"
+    folder: "data/ayarlar" 
     create: true
     format: "json"
     fields:
-      - {label: "Site Başlığı", name: "title", widget: "string"}
+      - {label: "Site Ana Başlığı", name: "title", widget: "string"}
+      - {label: "Ana Sayfa Karşılama Sloganı", name: "slogan", widget: "string", required: false}
       - {label: "Hakkımızda Metni", name: "about_text", widget: "text"}
+      - {label: "Ana Kapak Resmi", name: "ana_resim", widget: "image", required: false}
+      
+  - name: "iletisim"
+    label: "İletişim Bilgileri"
+    folder: "data/iletisim"
+    create: true
+    format: "json"
+    fields:
+      - {label: "Telefon Numarası", name: "telefon", widget: "string", required: false}
+      - {label: "E-posta Adresi", name: "email", widget: "string", required: false}
+      - {label: "Adres (Açık Adres)", name: "adres", widget: "text", required: false}
+      - {label: "Çalışma Saatleri", name: "saatler", widget: "string", required: false}
+
+  - name: "urunler"
+    label: "İplik Çeşitleri / Ürünler"
+    folder: "data/urunler"
+    create: true
+    format: "json"
+    fields:
+      - {label: "Ürün Adı", name: "urun_adi", widget: "string"}
+      - {label: "Ürün Görseli", name: "urun_resmi", widget: "image", required: false}
+      - {label: "Kısa Açıklama (Renk, kalınlık vb.)", name: "aciklama", widget: "text"}
+      - {label: "Stok Durumu", name: "stok", widget: "boolean", default: true}
