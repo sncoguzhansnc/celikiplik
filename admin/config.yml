@@ -1,17 +1,17 @@
 backend:
-      name: github
-      repo: sncoguzhansnc/celikiplik
-      branch: main
+  name: github
+  repo: sncoguzhansnc/celik-iplik
+  branch: main
 
-    media_folder: "images"
-    public_folder: "images"
+media_folder: "images"
+public_folder: "images"
 
-    collections:
-      - name: "site_icerik"
-        label: "Site Yazıları"
-        folder: "data"
-        create: true
-        format: "json"
-        fields:
-          - {label: "Site Başlığı", name: "title", widget: "string"}
-          - {label: "Hakkımızda Metni", name: "about_text", widget: "text"}
+collections:
+  - name: "site_icerik"
+    label: "Site Yazıları"
+    folder: "data"
+    create: true
+    format: "json"
+    fields:
+      - {label: "Site Başlığı", name: "title", widget: "string"}
+      - {label: "Hakkımızda Metni", name: "about_text", widget: "text"}
