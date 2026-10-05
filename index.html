@@ -30,8 +30,9 @@
 
     <section class="hero" style="background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.6)), url('resimler/anasayfa-hero.jpg') no-repeat center center/cover;">
         <div class="hero-content" data-aos="fade-down">
-            <h1>Çelik İplik Güvencesiyle</h1>
-            <p>Kalite, Güvence ve Tecrübe ile tekstil sektöründe yanınızdayız.</p>
+            <!-- JS'nin bulabilmesi için id="site-basligi" ve id="site-slogani" eklendi -->
+            <h1 id="site-basligi">Çelik İplik Güvencesiyle</h1>
+            <p id="site-slogani">Kalite, Güvence ve Tecrübe ile tekstil sektöründe yanınızdayız.</p>
             <a href="urunler.html" class="btn-primary">Ürünleri İncele</a>
         </div>
     </section>
@@ -118,5 +119,18 @@
         hamburger.addEventListener("click", () => { navLinks.classList.toggle("active"); });
     </script>
 
+    <script>
+        fetch('data/ayarlar/deneme.json')
+            .then(response => response.json())
+            .then(veri => {
+                if(veri.title) {
+                    document.getElementById('site-basligi').innerText = veri.title;
+                }
+                if(veri.slogan) {
+                    document.getElementById('site-slogani').innerText = veri.slogan;
+                }
+            })
+            .catch(hata => console.log('CMS verisi çekilirken hata oluştu:', hata));
+    </script>
 </body>
 </html>
