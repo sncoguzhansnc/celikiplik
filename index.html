@@ -72,6 +72,14 @@
         </div>
     </section>
 
+    <!-- Ürünlerin Otomatik Listeleneceği Bölüm -->
+    <section id="dinamik-urunler" class="container" style="padding: 40px 0; text-align: center;">
+        <h2 class="section-title" data-aos="fade-in">İplik Çeşitlerimiz</h2>
+        <div id="urun-listesi-container" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 20px;">
+            <!-- Ürünler JavaScript ile döngüden buraya eklenecek -->
+        </div>
+    </section>
+
     <section id="contact" class="contact-section">
         <div class="container">
             <h2 class="section-title" data-aos="fade-in">İletişim Bilgileri</h2>
@@ -79,15 +87,18 @@
                 <div class="contact-info" data-aos="fade-right">
                     <div class="info-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <div><h4>Adres</h4><p>Orta Mah. Çevreyolu Cad. No:45<br>Bayrampaşa / İstanbul</p></div>
+                        <!-- Adres için id eklendi -->
+                        <div><h4>Adres</h4><p id="iletisim-adres">Orta Mah. Çevreyolu Cad. No:45<br>Bayrampaşa / İstanbul</p></div>
                     </div>
                     <div class="info-item">
                         <i class="fas fa-phone-alt"></i>
-                        <div><h4>Telefon</h4><p><a href="tel:+905398377886">+90 539 837 78 86</a></p></div>
+                        <!-- Telefon için id eklendi -->
+                        <div><h4>Telefon</h4><p><a href="tel:+905398377886" id="iletisim-telefon">+90 539 837 78 86</a></p></div>
                     </div>
                     <div class="info-item">
                         <i class="fas fa-envelope"></i>
-                        <div><h4>E-posta</h4><p><a href="mailto:info@celikiplik.com">info@celikiplik.com</a></p></div>
+                        <!-- Email için id eklendi -->
+                        <div><h4>E-posta</h4><p><a href="mailto:info@celikiplik.com" id="iletisim-email">info@celikiplik.com</a></p></div>
                     </div>
                 </div>
                 <div class="map-container" data-aos="fade-left">
@@ -119,20 +130,60 @@
         hamburger.addEventListener("click", () => { navLinks.classList.toggle("active"); });
     </script>
 
-    <!-- CMS'den Gelen Verileri Çekme Kodu (Önbellek Kırıcı Eklenmiş Hali) -->
+    <!-- CMS'den Gelen Verileri Çekme Kodu -->
     <script>
-        // { cache: 'no-store' } kodu, tarayıcıya "bu dosyayı asla hafızada tutma, hep en yenisini getir" der.
+        // 1. ANA SAYFA BAŞLIK VE SLOGAN ÇEKME (Önceki Ayar)
         fetch('data/ayarlar/deneme.json', { cache: 'no-store' })
             .then(response => response.json())
             .then(veri => {
-                if(veri.title) {
-                    document.getElementById('site-basligi').innerText = veri.title;
+                if(veri.title) document.getElementById('site-basligi').innerText = veri.title;
+                if(veri.slogan) document.getElementById('site-slogani').innerText = veri.slogan;
+            })
+            .catch(hata => console.log('Genel ayar verisi çekilemedi:', hata));
+
+        // 2. İLETİŞİM BİLGİLERİNİ ÇEKME
+        fetch('data/iletisim.json', { cache: 'no-store' })
+            .then(response => response.json())
+            .then(veri => {
+                // \n ile ayrılmış metni HTML <br> etiketine çeviriyoruz (Adres alt satıra geçsin diye)
+                if(veri.adres) document.getElementById('iletisim-adres').innerHTML = veri.adres.replace(/\n/g, '<br>');
+                if(veri.telefon) {
+                    document.getElementById('iletisim-telefon').innerText = veri.telefon;
+                    // Tıklayınca aranması için boşlukları temizleyip href'e ekliyoruz
+                    document.getElementById('iletisim-telefon').href = "tel:" + veri.telefon.replace(/\s+/g, ''); 
                 }
-                if(veri.slogan) {
-                    document.getElementById('site-slogani').innerText = veri.slogan;
+                if(veri.email) {
+                    document.getElementById('iletisim-email').innerText = veri.email;
+                    document.getElementById('iletisim-email').href = "mailto:" + veri.email;
                 }
             })
-            .catch(hata => console.log('CMS verisi çekilirken hata oluştu:', hata));
+            .catch(hata => console.log('İletişim verisi henüz oluşturulmamış veya çekilemedi:', hata));
+
+        // 3. ÜRÜNLERİ DÖNGÜ (LOOP) İLE ÇEKME
+        fetch('data/urunler.json', { cache: 'no-store' })
+            .then(response => response.json())
+            .then(veri => {
+                const container = document.getElementById('urun-listesi-container');
+                if(veri.urun_listesi && veri.urun_listesi.length > 0) {
+                    container.innerHTML = ''; // İçindeki mevcut boşluğu/yükleniyor yazısını temizle
+                    
+                    veri.urun_listesi.forEach(urun => {
+                        // Her ürün için bir HTML kartı (div) oluşturuyoruz
+                        const kart = document.createElement('div');
+                        // Karta CSS özellikleri ekliyoruz (style.css'ine de taşıyabilirsin)
+                        kart.style.cssText = "background: #fff; border: 1px solid #ddd; padding: 20px; border-radius: 8px; width: 280px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);";
+                        
+                        let urunHtml = `<h3 style="color: #003366; margin-bottom: 10px;">${urun.urun_adi}</h3>`;
+                        if(urun.aciklama) urunHtml += `<p style="color: #666; font-size: 14px;">${urun.aciklama}</p>`;
+                        
+                        kart.innerHTML = urunHtml;
+                        container.appendChild(kart);
+                    });
+                } else {
+                    container.innerHTML = '<p>Henüz ürün eklenmemiş.</p>';
+                }
+            })
+            .catch(hata => console.log('Ürün verisi henüz oluşturulmamış veya çekilemedi:', hata));
     </script>
 </body>
 </html>
