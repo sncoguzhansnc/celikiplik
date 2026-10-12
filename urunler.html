@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Çelik İplik | Ürünler</title>
     
-    <!-- ÖNEMLİ: Tarayıcının yeni tasarımı görmesi için ?v=2 eklendi -->
-    <link rel="stylesheet" href="style.css?v=2">
-    
+    <link rel="stylesheet" href="style.css?v=3">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -46,62 +44,78 @@
             <h2 class="page-title">Ürünler</h2>
         </div>
 
-        <div class="yarn-categories">
+        <div class="content-wrapper">
             
-            <!-- Pamuk ve Karışımlı İplikler -->
-            <div class="yarn-card" data-aos="fade-up">
-                <div class="yarn-card-header">
-                    <h3>Pamuk İplikler</h3>
-                    <i class="fas fa-leaf"></i>
+            <!-- SOL MENÜ (SABİT KATEGORİLER) -->
+            <aside class="sidebar" data-aos="fade-right">
+                <div class="category-menu">
+                    <h3>Kategoriler</h3>
+                    <ul>
+                        <li><a href="#pamuk-iplikleri"><i class="fas fa-leaf"></i> Pamuk & Karışımlı</a></li>
+                        <li><a href="#akrilik-iplikleri"><i class="fas fa-certificate"></i> Akrilik İplikler</a></li>
+                        <li><a href="#fantazi-iplikleri"><i class="fas fa-star"></i> Fantazi İplikler</a></li>
+                    </ul>
                 </div>
-                <ul class="yarn-items">
-                    <li><i class="fas fa-angle-right"></i> 20/2 %50-50 PAMUK-AKRİLİK EKRU</li>
-                    <li><i class="fas fa-angle-right"></i> 30/2 %50-50 PAMUK-AKRİLİK EKRU</li>
-                    <li><i class="fas fa-angle-right"></i> 20/2 %50-50 PAMUK-AKRİLİK RENKLİ</li>
-                    <li><i class="fas fa-angle-right"></i> 30/2 %50-50 PAMUK-AKRİLİK RENKLİ</li>
-                    <li><i class="fas fa-angle-right"></i> 20/2 VİSKON AKRİLİK EKRU</li>
-                    <li><i class="fas fa-angle-right"></i> 30/2 VİSKON AKRİLİK EKRU</li>
-                    <li><i class="fas fa-angle-right"></i> 20/2 VİSKON AKRİLİK RENKLİ(B.BOY)</li>
-                    <li><i class="fas fa-angle-right"></i> 30/2 VİSKON AKRİLİK RENKLİ (B.BOY)</li>
-                    <li><i class="fas fa-angle-right"></i> 28/1 VİSKON EKRU (RİNG)</li>
-                    <li><i class="fas fa-angle-right"></i> 20/1 VİSKON EKRU (RİNG)</li>
-                    <li><i class="fas fa-angle-right"></i> 30/1 BAMBU</li>
-                    <li><i class="fas fa-angle-right"></i> 20/1 BAMBU</li>
-                    <li><i class="fas fa-angle-right"></i> 28/2 %50-50 MODAL AKRİLİK EKRU</li>
-                    <li><i class="fas fa-angle-right"></i> 30/2 %100 PENYE MELANJ</li>
-                    <li><i class="fas fa-angle-right"></i> 20/2 %100 PENYE MELANJ</li>
-                </ul>
-            </div>
+            </aside>
 
-            <!-- Akrilik İplikler -->
-            <div class="yarn-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="yarn-card-header">
-                    <h3>Akrilik İplikler</h3>
-                    <i class="fas fa-certificate"></i>
+            <!-- SAĞ İÇERİK (ÜRÜN LİSTELERİ) -->
+            <div class="yarn-categories">
+                
+                <!-- Pamuk ve Karışımlı İplikler -->
+                <div id="pamuk-iplikleri" class="yarn-card" data-aos="fade-up">
+                    <div class="yarn-card-header">
+                        <h3>Pamuk İplikler</h3>
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <ul class="yarn-items">
+                        <li><i class="fas fa-angle-right"></i> 20/2 %50-50 PAMUK-AKRİLİK EKRU</li>
+                        <li><i class="fas fa-angle-right"></i> 30/2 %50-50 PAMUK-AKRİLİK EKRU</li>
+                        <li><i class="fas fa-angle-right"></i> 20/2 %50-50 PAMUK-AKRİLİK RENKLİ</li>
+                        <li><i class="fas fa-angle-right"></i> 30/2 %50-50 PAMUK-AKRİLİK RENKLİ</li>
+                        <li><i class="fas fa-angle-right"></i> 20/2 VİSKON AKRİLİK EKRU</li>
+                        <li><i class="fas fa-angle-right"></i> 30/2 VİSKON AKRİLİK EKRU</li>
+                        <li><i class="fas fa-angle-right"></i> 20/2 VİSKON AKRİLİK RENKLİ(B.BOY)</li>
+                        <li><i class="fas fa-angle-right"></i> 30/2 VİSKON AKRİLİK RENKLİ (B.BOY)</li>
+                        <li><i class="fas fa-angle-right"></i> 28/1 VİSKON EKRU (RİNG)</li>
+                        <li><i class="fas fa-angle-right"></i> 20/1 VİSKON EKRU (RİNG)</li>
+                        <li><i class="fas fa-angle-right"></i> 30/1 BAMBU</li>
+                        <li><i class="fas fa-angle-right"></i> 20/1 BAMBU</li>
+                        <li><i class="fas fa-angle-right"></i> 28/2 %50-50 MODAL AKRİLİK EKRU</li>
+                        <li><i class="fas fa-angle-right"></i> 30/2 %100 PENYE MELANJ</li>
+                        <li><i class="fas fa-angle-right"></i> 20/2 %100 PENYE MELANJ</li>
+                    </ul>
                 </div>
-                <ul class="yarn-items">
-                    <li><i class="fas fa-angle-right"></i> %100 Akrilik (HB & Relax)</li>
-                    <li><i class="fas fa-angle-right"></i> Akrilik Karışımlı İplikler</li>
-                    <li><i class="fas fa-angle-right"></i> Triko Akrilik İpliği</li>
-                </ul>
-            </div>
 
-            <!-- Fantazi İplikler -->
-            <div class="yarn-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="yarn-card-header">
-                    <h3>Fantazi İplikler</h3>
-                    <i class="fas fa-star"></i>
+                <!-- Akrilik İplikler -->
+                <div id="akrilik-iplikleri" class="yarn-card" data-aos="fade-up">
+                    <div class="yarn-card-header">
+                        <h3>Akrilik İplikler</h3>
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <ul class="yarn-items">
+                        <li><i class="fas fa-angle-right"></i> %100 Akrilik (HB & Relax)</li>
+                        <li><i class="fas fa-angle-right"></i> Akrilik Karışımlı İplikler</li>
+                        <li><i class="fas fa-angle-right"></i> Triko Akrilik İpliği</li>
+                    </ul>
                 </div>
-                <ul class="yarn-items">
-                    <li><i class="fas fa-angle-right"></i> Bükümlü Fantazi İplikler</li>
-                    <li><i class="fas fa-angle-right"></i> Kırçıllı İplikler</li>
-                    <li><i class="fas fa-angle-right"></i> Nopeli İplikler</li>
-                    <li><i class="fas fa-angle-right"></i> Simli ve Parlak İplikler</li>
-                </ul>
-            </div>
 
+                <!-- Fantazi İplikler -->
+                <div id="fantazi-iplikleri" class="yarn-card" data-aos="fade-up">
+                    <div class="yarn-card-header">
+                        <h3>Fantazi Özel Karışımlı İplikler</h3>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <ul class="yarn-items">
+                        <li><i class="fas fa-angle-right"></i> Bükümlü Fantazi İplikler</li>
+                        <li><i class="fas fa-angle-right"></i> Kırçıllı İplikler</li>
+                        <li><i class="fas fa-angle-right"></i> Nopeli İplikler</li>
+                        <li><i class="fas fa-angle-right"></i> Simli ve Parlak İplikler</li>
+                    </ul>
+                </div>
+
+            </div>
+            
         </div>
-        
     </section>
 
     <section id="contact" class="contact-section">
