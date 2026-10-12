@@ -108,9 +108,8 @@ ul { list-style: none; }
 
 /* --- 4. NEDEN ÇELİK İPLİK? (Eski İstatistiklerin Yerine Eklendi) --- */
 .why-choose-us {
-    background-color: #0a0a0a; /* Koyu siyah arka plan */
+    background-color: #f0f4f8; /* Kutuların belli olması için çok hafif gri/mavimsi arka plan */
     padding: 80px 0;
-    color: #ffffff;
 }
 
 .why-title {
@@ -119,11 +118,11 @@ ul { list-style: none; }
     font-weight: 800;
     margin-bottom: 50px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    color: #003366; /* Tema laciverti */
 }
 
 .why-title .highlight {
-    color: #2ecc71; /* Görseldeki yeşil tonu */
+    color: #e60000; /* Tema kırmızısı */
 }
 
 .why-grid {
@@ -134,33 +133,34 @@ ul { list-style: none; }
 
 .why-card {
     flex: 1;
-    background-color: rgba(20, 20, 20, 0.6); /* Hafif saydam koyu gri kart */
-    border: 1px solid rgba(255, 255, 255, 0.05); /* Çok ince beyaz kenarlık */
-    border-radius: 8px;
+    background-color: #ffffff; /* Beyaz kutucuk */
+    border-radius: 15px; /* Köşeleri yuvarlatılmış */
     padding: 40px 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Derinlik gölgesi */
-    transition: transform 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06); /* Sitenin temasına uygun yumuşak gölge */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid #003366; /* Sol tarafta lacivert vurgu şeridi */
 }
 
 .why-card:hover {
-    transform: translateY(-5px); /* Üzerine gelince hafif yukarı kalkar */
+    transform: translateY(-8px); /* Üzerine gelince hafif yukarı kalkar */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    border-left-color: #d4af37; /* Üzerine gelince sol şerit altın sarısı olur */
 }
 
 .why-card .card-content {
-    border-left: 4px solid #2ecc71; /* Sol taraftaki yeşil çizgi */
-    padding-left: 20px;
+    padding-left: 10px;
 }
 
 .why-card h3 {
     font-size: 20px;
     margin-bottom: 15px;
-    color: #ffffff;
+    color: #003366;
     font-weight: 700;
 }
 
 .why-card p {
-    font-size: 15px;
-    color: #a0a0a0; /* Soluk gri metin rengi */
+    font-size: 15.5px;
+    color: #555;
     line-height: 1.7;
     margin: 0;
 }
