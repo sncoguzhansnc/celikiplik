@@ -51,7 +51,35 @@ ul { list-style: none; }
     width: 100%;
 }
 
-.logo img { height: 70px; width: auto; }
+/* --- YENİ KOD İLE YAZILMIŞ LOGO --- */
+.css-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+    height: 65px;
+    border: 3px solid #ffffff; /* Dış çember rengi */
+    border-radius: 50%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 32px;
+    color: #ffffff; /* 'Ç' harfinin rengi */
+    text-decoration: none;
+    letter-spacing: -2px; /* Harfleri görselindeki gibi birbirine yaklaştırır */
+    padding-right: 4px; /* Hizalamayı dengeler */
+    box-shadow: 0 0 15px rgba(198, 168, 124, 0.2); /* Etrafına çok hafif bronz bir ışıltı verir */
+    transition: 0.3s;
+}
+
+.css-logo .bronz-i {
+    color: #c6a87c; /* 'İ' harfini sitenin bronz rengi yapar */
+}
+
+.css-logo:hover {
+    border-color: #c6a87c;
+    transform: scale(1.05);
+}
+/* --------------------------------- */
 
 .nav-links { display: flex; gap: 30px; align-items: center; }
 
