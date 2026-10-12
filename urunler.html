@@ -8,14 +8,14 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18484810122"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18484810122"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'AW-18484810122');
-</script>
+      gtag('config', 'AW-18484810122');
+    </script>
 </head>
 <body>
 
@@ -42,35 +42,63 @@
             <h2 class="page-title">Ürünler</h2>
         </div>
 
-        <div class="content-wrapper">
-            <aside class="sidebar" data-aos="fade-right">
-                <div class="category-box">
-                    <h3>Ürün Kategorileri</h3>
-                    <ul>
-                        <li><a onclick="filterSelection('all')">Tümü <i class="fas fa-th"></i></a></li>
-                        <li><a onclick="filterSelection('iplik')">İplik <i class="fas fa-angle-double-right"></i></a></li>
-                    </ul>
+        <!-- YENİ KUTULU LİSTE YAPISI -->
+        <div class="yarn-categories">
+            
+            <!-- Pamuk ve Karışımlı İplikler -->
+            <div class="yarn-card" data-aos="fade-up">
+                <div class="yarn-card-header">
+                    <h3>Pamuk İplikler </h3>
+                    <i class="fas fa-leaf"></i>
                 </div>
-            </aside>
-
-            <div class="product-grid">
-                <div class="product-card column iplik" data-aos="fade-up">
-                    <div class="img-holder"><img src="resimler/pamuk.jpg" alt="Pamuk" onerror="this.src='https://via.placeholder.com/300'"></div>
-                    <h3>Pamuk İpliği</h3>
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                </div>
-                <div class="product-card column iplik" data-aos="fade-up" data-aos-delay="100">
-                    <div class="img-holder"><img src="resimler/fantazi.jpg" alt="Fantazi" onerror="this.src='https://via.placeholder.com/300'"></div>
-                    <h3>Fantazi İplik</h3>
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                </div>
-                <div class="product-card column iplik" data-aos="fade-up" data-aos-delay="200">
-                    <div class="img-holder"><img src="resimler/kamgarn.jpg" alt="Kamgarn" onerror="this.src='https://via.placeholder.com/300'"></div>
-                    <h3>Kamgarn</h3>
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                </div>
+                <ul class="yarn-items">
+                    <li><i class="fas fa-angle-right"></i> 20/2 %50-50 PAMUK-AKRİLİK EKRU</li>
+                    <li><i class="fas fa-angle-right"></i> 30/2 %50-50 PAMUK-AKRİLİK EKRU</li>
+                    <li><i class="fas fa-angle-right"></i> 20/2 %50-50 PAMUK-AKRİLİK RENKLİ</li>
+                    <li><i class="fas fa-angle-right"></i> 30/2 %50-50 PAMUK-AKRİLİK RENKLİ</li>
+                    <li><i class="fas fa-angle-right"></i> 20/2 VİSKON AKRİLİK EKRU</li>
+                    <li><i class="fas fa-angle-right"></i> 30/2 VİSKON AKRİLİK EKRU</li>
+                    <li><i class="fas fa-angle-right"></i> 20/2 VİSKON AKRİLİK RENKLİ(B.BOY)</li>
+                    <li><i class="fas fa-angle-right"></i> 30/2 VİSKON AKRİLİK RENKLİ (B.BOY)</li>
+                    <li><i class="fas fa-angle-right"></i> 28/1 VİSKON EKRU (RİNG)</li>
+                    <li><i class="fas fa-angle-right"></i> 20/1 VİSKON EKRU (RİNG)</li>
+                    <li><i class="fas fa-angle-right"></i> 30/1 BAMBU</li>
+                    <li><i class="fas fa-angle-right"></i> 20/1 BAMBU</li>
+                    <li><i class="fas fa-angle-right"></i> 28/2 %50-50 MODAL AKRİLİK EKRU</li>
+                    <li><i class="fas fa-angle-right"></i> 30/2 %100 PENYE MELANJ</li>
+                    <li><i class="fas fa-angle-right"></i> 20/2 %100 PENYE MELANJ</li>
+                </ul>
             </div>
+
+            <!-- Akrilik İplikler -->
+            <div class="yarn-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="yarn-card-header">
+                    <h3>Akrilik İplikler</h3>
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <ul class="yarn-items">
+                    <li><i class="fas fa-angle-right"></i> %100 Akrilik (HB & Relax)</li>
+                    <li><i class="fas fa-angle-right"></i> Akrilik Karışımlı İplikler</li>
+                    <li><i class="fas fa-angle-right"></i> Triko Akrilik İpliği</li>
+                </ul>
+            </div>
+
+            <!-- Fantazi İplikler -->
+            <div class="yarn-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="yarn-card-header">
+                    <h3>Fantazi İplikler</h3>
+                    <i class="fas fa-star"></i>
+                </div>
+                <ul class="yarn-items">
+                    <li><i class="fas fa-angle-right"></i> Bükümlü Fantazi İplikler</li>
+                    <li><i class="fas fa-angle-right"></i> Kırçıllı İplikler</li>
+                    <li><i class="fas fa-angle-right"></i> Nopeli İplikler</li>
+                    <li><i class="fas fa-angle-right"></i> Simli ve Parlak İplikler</li>
+                </ul>
+            </div>
+
         </div>
+        
     </section>
 
     <section id="contact" class="contact-section">
@@ -116,34 +144,10 @@
     <script>
         AOS.init({ duration: 1000, once: true });
 
-        // Hamburger
+        // Hamburger Menü
         const hamburger = document.querySelector(".hamburger");
         const navLinks = document.querySelector(".nav-links");
         hamburger.addEventListener("click", () => { navLinks.classList.toggle("active"); });
-
-        // Filtreleme
-        filterSelection("all")
-        function filterSelection(c) {
-          var x, i; x = document.getElementsByClassName("column");
-          if (c == "all") c = "";
-          for (i = 0; i < x.length; i++) {
-            w3RemoveClass(x[i], "show");
-            if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-            else x[i].style.display = "none";
-          }
-          for (i = 0; i < x.length; i++) {
-             if (x[i].className.indexOf(c) > -1) x[i].style.display = "block";
-          }
-        }
-        function w3AddClass(element, name) {
-          var i, arr1, arr2; arr1 = element.className.split(" "); arr2 = name.split(" ");
-          for (i = 0; i < arr2.length; i++) { if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];} }
-        }
-        function w3RemoveClass(element, name) {
-          var i, arr1, arr2; arr1 = element.className.split(" "); arr2 = name.split(" ");
-          for (i = 0; i < arr2.length; i++) { while (arr1.indexOf(arr2[i]) > -1) { arr1.splice(arr1.indexOf(arr2[i]), 1); } }
-          element.className = arr1.join(" ");
-        }
     </script>
 
 </body>
