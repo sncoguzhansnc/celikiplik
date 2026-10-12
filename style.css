@@ -11,7 +11,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     line-height: 1.6;
     color: #d0d0d0; /* Açık gri okuma metni */
-    background-color: #0d0d0d; /* Görseldeki gibi tam koyu arka plan */
+    background-color: #0d0d0d; /* Tam koyu arka plan */
     overflow-x: hidden;
 }
 
@@ -47,7 +47,7 @@ ul { list-style: none; }
     width: 100%;
 }
 
-.logo img { height: 70px; width: auto; /* Logon karanlıkta kaybolursa beyaz versiyonunu yüklemen gerekebilir */ }
+.logo img { height: 70px; width: auto; }
 
 .nav-links { display: flex; gap: 30px; align-items: center; }
 
@@ -59,15 +59,14 @@ ul { list-style: none; }
     letter-spacing: 1px;
 }
 
-/* Hover ve Aktif durumda Bronz/Altın rengi */
-.nav-links a:hover, .nav-links a.active { color: #c6a87c; }
+.nav-links a:hover, .nav-links a.active { color: #c6a87c; } /* Bronz vurgu */
 
 .btn-contact {
     background: transparent;
     color: #c6a87c !important;
     border: 1px solid #c6a87c;
     padding: 10px 25px;
-    border-radius: 4px; /* Yuvarlak yerine daha keskin, mimari bir kutu */
+    border-radius: 4px;
     font-weight: 600;
 }
 
@@ -87,7 +86,6 @@ ul { list-style: none; }
     justify-content: center;
     text-align: center;
     color: #fff;
-    /* Resmi karartmak için gradient güncellendi */
     background: linear-gradient(rgba(13, 13, 13, 0.8), rgba(13, 13, 13, 0.8)), url('resimler/anasayfa-hero.jpg') no-repeat center center/cover !important;
 }
 
@@ -101,7 +99,7 @@ ul { list-style: none; }
 .hero p { font-size: 1.2rem; margin-bottom: 40px; font-weight: 300; opacity: 0.8; }
 
 .btn-primary {
-    background: #c6a87c; /* Bronz Tema Rengi */
+    background: #c6a87c; /* Bronz Rengi */
     color: #0d0d0d;
     padding: 15px 40px;
     border-radius: 4px;
@@ -129,7 +127,7 @@ ul { list-style: none; }
 }
 
 .why-title .highlight {
-    color: #c6a87c; /* Bronz Vurgu */
+    color: #c6a87c; 
 }
 
 .why-grid {
@@ -140,8 +138,8 @@ ul { list-style: none; }
 
 .why-card {
     flex: 1;
-    background-color: #161616; /* Çok hafif açık siyah tonu */
-    border: 1px solid rgba(255, 255, 255, 0.05); /* İnce şık sınır çizgisi */
+    background-color: #161616;
+    border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 4px;
     padding: 40px 30px;
     transition: transform 0.3s ease, border-color 0.3s ease;
@@ -150,7 +148,7 @@ ul { list-style: none; }
 
 .why-card:hover {
     transform: translateY(-5px);
-    border-top: 2px solid #c6a87c; /* Üzerine gelince üstte bronz çizgi belirir */
+    border-top: 2px solid #c6a87c;
 }
 
 .why-card h3 {
@@ -162,7 +160,7 @@ ul { list-style: none; }
 
 .why-card p {
     font-size: 14px;
-    color: #888; /* Görseldeki gibi sönük gri */
+    color: #888;
     line-height: 1.8;
 }
 
@@ -187,7 +185,7 @@ ul { list-style: none; }
 .value-card h3 { font-size: 1.3rem; margin-bottom: 15px; color: #ffffff; }
 .value-card p { color: #888; font-size: 14px; }
 
-/* --- 6. ÜRÜNLER SAYFASI --- */
+/* --- 6. ÜRÜNLER SAYFASI (YENİ KUTULU LİSTE TASARIMI) --- */
 .products-section { padding: 60px 20px; background-color: #0d0d0d; }
 
 .page-header {
@@ -197,32 +195,79 @@ ul { list-style: none; }
 .breadcrumb a { color: #c6a87c; }
 .page-title { font-size: 2.5rem; color: #ffffff; font-weight: 700; margin-top: 10px; }
 
-.content-wrapper { display: flex; gap: 40px; align-items: flex-start; }
-.sidebar { flex: 0 0 260px; }
-
-.category-box {
-    border: 1px solid rgba(255,255,255,0.05); border-radius: 4px; padding: 25px;
-    background: #161616; 
+.yarn-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
 }
-.category-box h3 { color: #ffffff; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); }
-.category-box ul li { margin-bottom: 12px; }
-.category-box ul li a { display: flex; justify-content: space-between; color: #888; cursor: pointer; }
-.category-box ul li a:hover, .category-box ul li a.active { color: #c6a87c; }
 
-.product-grid { flex: 1; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 30px; }
-
-.product-card {
-    background: #161616; border-radius: 4px; overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; text-align: center; padding-bottom: 20px;
+.yarn-card {
+    background-color: #161616;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    padding: 30px 40px;
+    border-left: 4px solid #c6a87c; /* Bronz vurgu şeridi */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.product-card:hover { transform: translateY(-5px); border-color: #c6a87c; }
 
-.img-holder { width: 100%; height: 220px; overflow: hidden; }
-.img-holder img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; opacity: 0.85; }
-.product-card:hover .img-holder img { transform: scale(1.05); opacity: 1; }
+.yarn-card:hover {
+    transform: translateX(10px); /* Üzerine gelince sağa doğru hafif kayar */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
 
-.product-card h3 { margin: 15px 0 5px; color: #ffffff; font-size: 1.1rem; }
-.stars { color: #c6a87c; font-size: 0.9rem; }
+.yarn-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.yarn-card-header h3 {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.yarn-card-header i {
+    color: #c6a87c;
+    font-size: 28px;
+    opacity: 0.8;
+}
+
+.yarn-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.yarn-items li {
+    color: #d0d0d0;
+    font-size: 16px;
+    padding: 12px 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.yarn-items li:hover {
+    color: #ffffff;
+    padding-left: 10px;
+}
+
+.yarn-items li i {
+    color: #c6a87c;
+    font-size: 14px;
+    margin-right: 12px;
+}
+
+.yarn-items li:last-child {
+    border-bottom: none;
+}
 
 /* --- 7. HAKKIMIZDA --- */
 .about { display: flex; align-items: center; padding: 100px 20px; gap: 60px; background-color: #0d0d0d; }
@@ -289,7 +334,10 @@ footer { background: #0a0a0a; color: #888; padding: 40px 0; text-align: center; 
     .why-title { font-size: 24px; }
 
     .content-wrapper, .about, .contact-wrapper { flex-direction: column; }
-    .sidebar { width: 100%; }
+    
+    /* Mobil'de Ürün Kutularının Daralmasını Engelleme */
+    .yarn-card { padding: 20px; }
+    .yarn-card-header h3 { font-size: 20px; }
 }
 .show { display: block; } 
 .hide { display: none; }
