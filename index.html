@@ -86,13 +86,6 @@
         </div>
     </section>
 
-    <section id="dinamik-urunler" class="container" style="padding: 40px 0; text-align: center;">
-        <h2 class="section-title" data-aos="fade-in">İplik Çeşitlerimiz</h2>
-        <div id="urun-listesi-container" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 20px;">
-            <!-- Ürünler JavaScript ile döngüden buraya eklenecek -->
-        </div>
-    </section>
-
     <section id="contact" class="contact-section">
         <div class="container">
             <h2 class="section-title" data-aos="fade-in">İletişim Bilgileri</h2>
@@ -140,9 +133,9 @@
         hamburger.addEventListener("click", () => { navLinks.classList.toggle("active"); });
     </script>
 
-    <!-- CMS'den Gelen İletişim ve Ürün Verilerini Çekme Kodu -->
+    <!-- CMS'den Gelen İletişim Verilerini Çekme Kodu -->
     <script>
-        // 2. İLETİŞİM BİLGİLERİNİ ÇEKME
+        // İLETİŞİM BİLGİLERİNİ ÇEKME
         fetch('data/iletisim.json', { cache: 'no-store' })
             .then(response => response.json())
             .then(veri => {
@@ -157,30 +150,6 @@
                 }
             })
             .catch(hata => console.log('İletişim verisi henüz oluşturulmamış veya çekilemedi:', hata));
-
-        // 3. ÜRÜNLERİ LOOP İLE ÇEKME
-        fetch('data/urunler.json', { cache: 'no-store' })
-            .then(response => response.json())
-            .then(veri => {
-                const container = document.getElementById('urun-listesi-container');
-                if(veri.urun_listesi && veri.urun_listesi.length > 0) {
-                    container.innerHTML = ''; 
-                    
-                    veri.urun_listesi.forEach(urun => {
-                        const kart = document.createElement('div');
-                        kart.style.cssText = "background: #fff; border: 1px solid #ddd; padding: 20px; border-radius: 8px; width: 280px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);";
-                        
-                        let urunHtml = `<h3 style="color: #003366; margin-bottom: 10px;">${urun.urun_adi}</h3>`;
-                        if(urun.aciklama) urunHtml += `<p style="color: #666; font-size: 14px;">${urun.aciklama}</p>`;
-                        
-                        kart.innerHTML = urunHtml;
-                        container.appendChild(kart);
-                    });
-                } else {
-                    container.innerHTML = '<p>Henüz ürün eklenmemiş.</p>';
-                }
-            })
-            .catch(hata => console.log('Ürün verisi henüz oluşturulmamış veya çekilemedi:', hata));
     </script>
 </body>
 </html>
