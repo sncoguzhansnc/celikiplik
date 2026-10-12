@@ -8,15 +8,16 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="resimler/logo.png">
+    
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18484810122"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18484810122"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'AW-18484810122');
-</script>
+      gtag('config', 'AW-18484810122');
+    </script>
 </head>
 <body>
 
@@ -39,14 +40,12 @@
 
     <section class="hero" style="background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.6)), url('resimler/anasayfa-hero.jpg') no-repeat center center/cover;">
         <div class="hero-content" data-aos="fade-down">
-            <!-- JS'nin bulabilmesi için id -->
             <h1 id="site-basligi">Çelik İplik Güvencesiyle</h1>
-            <p id="site-slogani">Triko, Çorap, Bere ve Aksesuar İmalatı İçin Güvenilir İplik Tedarikçiniz" Dokumadan örmeye, zengin renk seçeneği, kesintisiz stok ve yüksek mukavemetli iplik çeşitleriyle üretiminize değer katıyoruz.</p>
+            <p id="site-slogani">Triko, Çorap, Bere ve Aksesuar İmalatı İçin Güvenilir İplik Tedarikçiniz. Dokumadan örmeye, zengin renk seçeneği, kesintisiz stok ve yüksek mukavemetli iplik çeşitleriyle üretiminize değer katıyoruz.</p>
             <a href="urunler.html" class="btn-primary">Ürünleri İncele</a>
         </div>
     </section>
 
-    <!-- Neden Çelik İplik Bölümü (Eski İstatistiklerin Yerine Eklendi) -->
     <section class="why-choose-us">
         <div class="container">
             <h2 class="why-title" data-aos="fade-up">NEDEN <span class="highlight">ÇELİK İPLİK?</span></h2>
@@ -85,7 +84,6 @@
         </div>
     </section>
 
-    <!-- Ürünlerin Otomatik Listeleneceği Bölüm -->
     <section id="dinamik-urunler" class="container" style="padding: 40px 0; text-align: center;">
         <h2 class="section-title" data-aos="fade-in">İplik Çeşitlerimiz</h2>
         <div id="urun-listesi-container" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 20px;">
@@ -140,16 +138,8 @@
         hamburger.addEventListener("click", () => { navLinks.classList.toggle("active"); });
     </script>
 
-    <!-- CMS'den Gelen Verileri Çekme Kodu -->
+    <!-- CMS'den Gelen İletişim ve Ürün Verilerini Çekme Kodu -->
     <script>
-        fetch('data/ayarlar/deneme.json', { cache: 'no-store' })
-            .then(response => response.json())
-            .then(veri => {
-                if(veri.title) document.getElementById('site-basligi').innerText = veri.title;
-                if(veri.slogan) document.getElementById('site-slogani').innerText = veri.slogan;
-            })
-            .catch(hata => console.log('Genel ayar verisi çekilemedi:', hata));
-
         // 2. İLETİŞİM BİLGİLERİNİ ÇEKME
         fetch('data/iletisim.json', { cache: 'no-store' })
             .then(response => response.json())
