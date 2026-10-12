@@ -7,11 +7,15 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth; /* Menüye tıklandığında yumuşak kayma efekti */
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
     line-height: 1.6;
-    color: #d0d0d0; /* Açık gri okuma metni */
-    background-color: #0d0d0d; /* Tam koyu arka plan */
+    color: #d0d0d0;
+    background-color: #0d0d0d;
     overflow-x: hidden;
 }
 
@@ -31,7 +35,7 @@ ul { list-style: none; }
 /* --- 2. NAVBAR (MENÜ) --- */
 .navbar {
     background: #0d0d0d;
-    border-bottom: 1px solid rgba(255,255,255,0.05); /* Çok ince şık bir ayrım çizgisi */
+    border-bottom: 1px solid rgba(255,255,255,0.05);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -59,7 +63,7 @@ ul { list-style: none; }
     letter-spacing: 1px;
 }
 
-.nav-links a:hover, .nav-links a.active { color: #c6a87c; } /* Bronz vurgu */
+.nav-links a:hover, .nav-links a.active { color: #c6a87c; }
 
 .btn-contact {
     background: transparent;
@@ -99,7 +103,7 @@ ul { list-style: none; }
 .hero p { font-size: 1.2rem; margin-bottom: 40px; font-weight: 300; opacity: 0.8; }
 
 .btn-primary {
-    background: #c6a87c; /* Bronz Rengi */
+    background: #c6a87c;
     color: #0d0d0d;
     padding: 15px 40px;
     border-radius: 4px;
@@ -185,7 +189,7 @@ ul { list-style: none; }
 .value-card h3 { font-size: 1.3rem; margin-bottom: 15px; color: #ffffff; }
 .value-card p { color: #888; font-size: 14px; }
 
-/* --- 6. ÜRÜNLER SAYFASI (YENİ KUTULU LİSTE TASARIMI) --- */
+/* --- 6. ÜRÜNLER SAYFASI (YENİ KUTULU LİSTE TASARIMI VE SOL MENÜ) --- */
 .products-section { padding: 60px 20px; background-color: #0d0d0d; }
 
 .page-header {
@@ -195,11 +199,77 @@ ul { list-style: none; }
 .breadcrumb a { color: #c6a87c; }
 .page-title { font-size: 2.5rem; color: #ffffff; font-weight: 700; margin-top: 10px; }
 
+.content-wrapper {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* Sol Menü (Sidebar) */
+.sidebar {
+    flex: 0 0 300px;
+    position: sticky;
+    top: 120px; /* Navbar'ın altına sabitlenir */
+}
+
+.category-menu {
+    background-color: #161616;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    padding: 30px;
+    border-top: 3px solid #c6a87c;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.category-menu h3 {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.category-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.category-menu ul li {
+    margin-bottom: 10px;
+}
+
+.category-menu ul li a {
+    display: flex;
+    align-items: center;
+    color: #a0a0a0;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 12px 15px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.category-menu ul li a i {
+    color: #c6a87c;
+    width: 25px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.category-menu ul li a:hover {
+    background-color: rgba(198, 168, 124, 0.1); /* Bronz saydam arkaplan */
+    color: #c6a87c;
+    transform: translateX(5px);
+}
+
+/* Sağ İçerik Kırmızı */
 .yarn-categories {
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 30px;
-    width: 100%;
 }
 
 .yarn-card {
@@ -207,12 +277,13 @@ ul { list-style: none; }
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 4px;
     padding: 30px 40px;
-    border-left: 4px solid #c6a87c; /* Bronz vurgu şeridi */
+    border-left: 4px solid #c6a87c;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    scroll-margin-top: 110px; /* Menüden tıklayınca navbarın altında kalmasını önler */
 }
 
 .yarn-card:hover {
-    transform: translateX(10px); /* Üzerine gelince sağa doğru hafif kayar */
+    transform: translateX(10px);
     box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
@@ -335,7 +406,8 @@ footer { background: #0a0a0a; color: #888; padding: 40px 0; text-align: center; 
 
     .content-wrapper, .about, .contact-wrapper { flex-direction: column; }
     
-    /* Mobil'de Ürün Kutularının Daralmasını Engelleme */
+    .sidebar { width: 100%; position: relative; top: 0; margin-bottom: 20px; }
+    
     .yarn-card { padding: 20px; }
     .yarn-card-header h3 { font-size: 20px; }
 }
