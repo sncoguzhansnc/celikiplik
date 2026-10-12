@@ -106,28 +106,64 @@ ul { list-style: none; }
 
 .btn-primary:hover { background: #b30000; transform: translateY(-3px); }
 
-/* --- 4. İSTATİSTİK BANDI --- */
-.stats-section {
-    background: #003366;
-    padding: 60px 0;
-    color: #fff;
-    position: relative;
-    z-index: 5;
-    margin-top: -5px;
+/* --- 4. NEDEN ÇELİK İPLİK? (Eski İstatistiklerin Yerine Eklendi) --- */
+.why-choose-us {
+    background-color: #0a0a0a; /* Koyu siyah arka plan */
+    padding: 80px 0;
+    color: #ffffff;
 }
 
-.stats-grid { display: flex; justify-content: space-around; text-align: center; }
-
-/* --- GÜNCELLEME 2: SAYILAR BEYAZ OLDU --- */
-.stat-item .number { 
-    display: block; 
-    font-size: 3rem; 
-    font-weight: 800; 
-    color: #ffffff; /* Beyaz Renk */
-    margin-bottom: 5px; 
+.why-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.stat-item .text { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; opacity: 0.9; }
+.why-title .highlight {
+    color: #2ecc71; /* Görseldeki yeşil tonu */
+}
+
+.why-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.why-card {
+    flex: 1;
+    background-color: rgba(20, 20, 20, 0.6); /* Hafif saydam koyu gri kart */
+    border: 1px solid rgba(255, 255, 255, 0.05); /* Çok ince beyaz kenarlık */
+    border-radius: 8px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Derinlik gölgesi */
+    transition: transform 0.3s ease;
+}
+
+.why-card:hover {
+    transform: translateY(-5px); /* Üzerine gelince hafif yukarı kalkar */
+}
+
+.why-card .card-content {
+    border-left: 4px solid #2ecc71; /* Sol taraftaki yeşil çizgi */
+    padding-left: 20px;
+}
+
+.why-card h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.why-card p {
+    font-size: 15px;
+    color: #a0a0a0; /* Soluk gri metin rengi */
+    line-height: 1.7;
+    margin: 0;
+}
 
 /* --- 5. DEĞERLER --- */
 .values {
@@ -141,7 +177,7 @@ ul { list-style: none; }
     text-align: center; transition: transform 0.3s; border-bottom: 4px solid transparent;
 }
 
-/* Diğerleri Kalsın dediğin için burası Altın Sarısı kaldı */
+/* Altın Sarısı Vurgu */
 .value-card:hover { transform: translateY(-10px); border-bottom: 4px solid #d4af37; }
 .value-card i { font-size: 3.5rem; color: #003366; margin-bottom: 20px; }
 .value-card h3 { font-size: 1.5rem; margin-bottom: 15px; color: #333; }
@@ -165,7 +201,7 @@ ul { list-style: none; }
 .category-box h3 { color: #003366; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 2px solid #f4f4f4; }
 .category-box ul li { margin-bottom: 12px; }
 .category-box ul li a { display: flex; justify-content: space-between; color: #666; font-weight: 600; cursor: pointer; }
-.category-box ul li a:hover { color: #d4af37; } /* Bu da sarı kaldı */
+.category-box ul li a:hover { color: #d4af37; } /* Sarı vurgu */
 
 .product-grid { flex: 1; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 30px; }
 
@@ -211,7 +247,7 @@ ul { list-style: none; }
 
 .map-container { flex: 1; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
 
-/* Footer çizgisi de sarı kaldı */
+/* Footer çizgisi sarı */
 footer { background: #003366; color: #fff; padding: 40px 0; text-align: center; border-top: 5px solid #d4af37; }
 .footer-content p { opacity: 0.8; font-size: 0.9rem; }
 .social-links a { color: #fff; font-size: 1.5rem; margin: 0 10px; }
@@ -240,7 +276,11 @@ footer { background: #003366; color: #fff; padding: 40px 0; text-align: center; 
     
     .hero h1 { font-size: 2.2rem; }
     .hero p { font-size: 1.1rem; }
-    .stats-grid { flex-direction: column; gap: 30px; }
+    
+    /* Yeni Neden Çelik İplik Mobil Ayarı */
+    .why-grid { flex-direction: column; }
+    .why-title { font-size: 28px; }
+
     .content-wrapper, .about, .contact-wrapper { flex-direction: column; }
     .sidebar { width: 100%; }
 }
